@@ -30,4 +30,9 @@ class AuthController extends Controller
             //throw $th;
         }
     }
+
+    public function me()
+    {
+        return response()->json(Auth::guard('api')->user());
+    }
 }

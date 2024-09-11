@@ -11,5 +11,6 @@ Route::get("/", function () {
     return "Api jalan";
 });
 
-Route::post('login', [\App\Http\Controllers\API\AuthController::class, 'actionLogin'])->name('login'); 
+Route::post('login', [\App\Http\Controllers\API\AuthController::class, 'actionLogin'])->name('login');
+Route::get('me', [\App\Http\Controllers\API\AuthController::class, 'me'])->middleware("auth:api")->name('me');
 Route::get('jurusan', [\App\Http\Controllers\API\RestController::class, 'jurusan']);
